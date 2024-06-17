@@ -3,53 +3,82 @@
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 4px;
     font-family: outfit;
     font-size: 16px;
-    margin-top: 24px;
+    margin-bottom: 4px;
 }
+
+
+
+/* .container >:first-child{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.container >:first-child>:first-child{
+    flex: 1;
+    text-align: left;
+}
+
+.container >:first-child>:nth-child(2){
+    flex: 1;
+    text-align: right;
+} */
+
 
 
 
 .container >:first-child{
-    display: flex;
-    flex-direction: row;
-}
-
-.container >:nth-child(2){
-    padding: 8px;
-   
+    padding: 12px;
+    gap:8px;
     box-sizing: border-box;
-    height: 50px;
+    height: min-content;
     display: flex;
     flex-direction: row;
     border-radius: 5px;
-    background-color: rgb(226, 226, 226);
+    background-color: #F2F2F2;
+  
 }
 
-.container >:nth-child(2) div{
+.container >:first-child div{
     display: flex;
     flex-direction: row;
     align-items: center;
+
+
 }
 
-.container >:nth-child(2) >:first-child{
-   
-    width: 70%;
-    
+.container >:first-child >:first-child{
+   flex:6;
+   justify-content: left;
+   text-align: left;
 }
 
-.container >:nth-child(2) >:nth-child(2){
-    width: 30%;
-    display: flex;
-    flex-direction: row;
+.container >:first-child >:nth-child(2){
+   flex:2;
 }
 
-.container >:nth-child(2) >:nth-child(2) button{
+.container >:first-child >:nth-child(3){
+    flex:1;
+    justify-content: right;
+}
+
+
+.container >:first-child >:nth-child(2) button{
     border: none;
     background-color: transparent;
     text-decoration: underline;
     font-size: 16px;
+}
+
+.optionsBtn{
+background-image: url(../../assets/icons/options.png);
+background-position: center;
+background-repeat: no-repeat;
+background-size: auto;
+background-color: transparent;
+border: none;
 }
 
 h4{

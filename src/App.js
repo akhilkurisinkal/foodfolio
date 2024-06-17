@@ -1,11 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import Planner from './pages/planner/Planner';
+import { AppProvider } from './AppContext';
 
 function App() {
   return (
     <div className="App">
-      <Planner/>
+      <AppProvider>
+        <Planner/>
+      </AppProvider>
+      
     </div>
   );
 }

@@ -1,42 +1,48 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./Planner.module.css";
 import PlannerChild from "../../components/plannerChild/PlannerChild";
+import { AppContext } from "../../AppContext";
+import AddMeal from "../../components/addMeal/AddMeal";
+
+
 
 const Planner = () => {
-    const [foodItem, setFoodItem] = useState({ fname: "", fcal: "" });
 
-    const handleChangeFname = (event) => {
-        setFoodItem({ ...foodItem, fname: event.target.value });
-        console.log(foodItem.fname);
-    };
+    const appData=useContext(AppContext);
+    const [dayPlan,setDayPlan]=useState([{mealType:"Breakfast",mealItems:[{name:"Oatmeal", calories:"355"},{name:"Banana Shake with Whey protein", calories:"150"}]}]);
 
     return (
         <div className={styles.planner}>
-            <h3>Create meal plan</h3>
+            <h2>Create meal plan</h2>
+            
 
-            <PlannerChild title="Breakfast" calories="390" />
-            <PlannerChild title="Morning snacks" calories="200" />
-            <PlannerChild title="Lunch" calories="550" />
-            <PlannerChild title="Evening snacks" calories="200" />
-            <PlannerChild title="Dinner" calories="680" />
-
-            <div>
-                this is a popup for adding food Items to create a meal
-                <h4>Add food</h4>
-                <label htmlFor="foodItemName">Name</label>
-                <input
-                    type="text"
-                    name="foodItemName"
-                    id="foodItemName"
-                    value={foodItem.fname}
-                    onChange={handleChangeFname}
-                />
-                <br />
-                <label htmlFor="cal">Calories</label>
-                <input type="text" name="cal" id="cal" />
-                <br />
-                <button>Add meal</button>
+            <div className={styles.mealsContainer}>
+                    {dayPlan.map((meal, mealIndex) => (
+                         <div key={mealIndex}>
+                            <div className={styles.mealTypeHeader}>
+                                <h3>{meal.mealType}</h3>
+                                <span>771 Calories</span>
+                            </div>
+                        
+                        {meal.mealItems.map((item, itemIndex) => (
+                            <PlannerChild
+                            key={mealIndex}
+                            title={meal.mealType}
+                            name={item.name}
+                            calories={item.calories}
+                            mealType={meal.mealType}
+                            />
+                        ))}
+                        <div className={styles.addBtnContainer}>
+                            <button className={styles.addFoodBtn}><span className={styles.addIcon}>&nbsp;</span><span>Add food</span></button>
+                        </div>
+                        </div>
+                    ))}
             </div>
+
+            <AddMeal/>
+            
+                
         </div>
     );
 };
