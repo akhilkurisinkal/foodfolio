@@ -6,6 +6,7 @@
     font-family: outfit;
     font-size: 16px;
     margin-bottom: 4px;
+    
 }
 
 
@@ -38,6 +39,7 @@
     flex-direction: row;
     border-radius: 5px;
     background-color: #F2F2F2;
+    min-height:45px;
   
 }
 
