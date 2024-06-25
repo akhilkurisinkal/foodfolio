@@ -49,22 +49,28 @@ const AddMeal=()=>{
    },[appData.plan]);
 
     return(
-            <div className={appData.addMealActive? styles.active:styles.inactive}>
-                this is a popup for adding meal
-                <h4>Add meal</h4>
-                <label htmlFor="mealName">Name</label>
+            <div className={appData.addMealActive? styles.active :`${styles.inactive} ${styles.pop}`}>
+        
+                <div className={styles.header}><span><h4>Add food</h4></span><span>close</span></div>
+                
                 <input
+                    className={styles.inputText}
                     type="text"
                     name="mealName"
                     id="mealName"
                     value={meal.mname}
                     onChange={setMealName}
+                    placeholder="Name"
                 />
-                <br />
-                <label htmlFor="cal">Calories</label>
-                <input type="text" name="cal" id="cal" value={meal.mcal} onChange={setMealCal}/>
-                <br />
-                <button onClick={saveMeal}>Add Meal</button>
+            
+                
+                <input className={styles.inputText} type="text" name="cal" id="cal" value={meal.mcal} onChange={setMealCal} placeholder="Calories"/>
+        
+                <button className={styles.addButton} onClick={saveMeal}>Add Meal</button>
+
+
+
+
             </div>
         
     )

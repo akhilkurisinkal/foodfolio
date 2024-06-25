@@ -55,7 +55,7 @@ const Planner = () => {
                 ))}
             </div>
 
-            <AddMeal />
+   
         </div>
     );
 };

@@ -5,9 +5,7 @@ const Nav=()=>{
     return(
         <div className={styles.nav}>
                 <div>Planner</div>
-                <div>Search</div>
-                <div>Insights</div>
-                <div>Profile</div>
+                <div>Plans</div>
         </div>
     )
 }

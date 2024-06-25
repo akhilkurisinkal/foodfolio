@@ -79,7 +79,7 @@ h3{
     width: max-content;
     padding: 2px;
     border: none;
-    background-color: #F2F2F2;
+    background-color: transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -91,5 +91,5 @@ h3{
 .addFoodBtn >:nth-child(2){
     text-decoration: underline;
     font-size: 16px;
-    color: #888888;
+    color: #212427;
 }

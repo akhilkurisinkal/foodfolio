@@ -6,6 +6,7 @@
     font-family: outfit;
     font-size: 16px;
     margin-bottom: 4px;
+    background-color: #FFFFFF;
     
 }
 
@@ -38,7 +39,6 @@
     display: flex;
     flex-direction: row;
     border-radius: 5px;
-    background-color: #F2F2F2;
     min-height:45px;
   
 }
@@ -86,5 +86,6 @@ border: none;
 h4{
     margin: 0;
     padding: 0;
+    
 }
 

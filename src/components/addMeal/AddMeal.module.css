@@ -1,8 +1,58 @@
 .active{
     display: block;
+    
 }
 
 .inactive{
-    display: none;
+    display: flex;
+    
 }
 
+.pop{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    min-height: min-content;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 5px 5px 5px grey;
+    background-color: #fff;
+    padding: 15px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+}
+
+.header >:first-child{
+    align-items: center;
+    justify-content: center;
+    flex:1;
+  
+}
+
+.header >:nth-child(2){
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    
+}
+
+.inputText{
+    height: 45px;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.addButton{
+    height: 45px;
+    background-color: #059669;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
