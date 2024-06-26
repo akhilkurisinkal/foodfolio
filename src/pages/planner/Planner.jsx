@@ -24,6 +24,12 @@ const Planner = () => {
         },
     ]);
 
+    const addFoodToMeal = (event) => {
+        console.log(event.currentTarget.id + " testing button id");
+        appData.setAddMealActive(true);
+        appData.setSelectedMealType(event.currentTarget.id);
+    };
+
     return (
         <div className={styles.planner}>
             <h2>Create meal plan</h2>
@@ -46,7 +52,11 @@ const Planner = () => {
                             />
                         ))}
                         <div className={styles.addBtnContainer}>
-                            <button className={styles.addFoodBtn}>
+                            <button
+                                id={meal.mealType}
+                                className={styles.addFoodBtn}
+                                onClick={addFoodToMeal}
+                            >
                                 <span className={styles.addIcon}>&nbsp;</span>
                                 <span>Add food</span>
                             </button>
@@ -54,8 +64,6 @@ const Planner = () => {
                     </div>
                 ))}
             </div>
-
-   
         </div>
     );
 };

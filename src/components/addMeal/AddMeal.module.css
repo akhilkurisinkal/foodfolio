@@ -1,14 +1,14 @@
-.active{
-    display: block;
-    
-}
-
-.inactive{
+.active {
     display: flex;
-    
+
 }
 
-.pop{
+.inactive {
+    display: none;
+
+}
+
+.pop {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -22,34 +22,35 @@
     padding: 15px;
     flex-direction: column;
     gap: 10px;
+    display: flex;
 }
 
-.header{
+.header {
     display: flex;
     flex-direction: row;
 }
 
-.header >:first-child{
+.header>:first-child {
     align-items: center;
     justify-content: center;
-    flex:1;
-  
+    flex: 1;
+
 }
 
-.header >:nth-child(2){
+.header>:nth-child(2) {
     position: absolute;
     right: 15px;
     top: 15px;
-    
+
 }
 
-.inputText{
+.inputText {
     height: 45px;
     border: none;
     border-bottom: 1px solid grey;
 }
 
-.addButton{
+.addButton {
     height: 45px;
     background-color: #059669;
     border: none;
