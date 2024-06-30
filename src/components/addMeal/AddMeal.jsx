@@ -7,7 +7,6 @@ const AddMeal = () => {
     const appData = useContext(AppContext);
 
     const [meal, setMeal] = useState({ mname: "", mcal: "" });
-
     const setMealName = (e) => {
         setMeal({ ...meal, mname: e.target.value });
     };
@@ -20,24 +19,45 @@ const AddMeal = () => {
         console.log(meal);
     }, [meal]);
 
+    const addMealItem = (mealIndex, newItem) => {
+        appData.setDayPlan((prevDayPlan) => {
+            const updatedDayPlan = [...prevDayPlan];
+
+            // Check if the mealIndex is valid
+            if (mealIndex >= 0 && mealIndex < updatedDayPlan.length) {
+                // Add the new item to the mealItems array of the specified meal
+                updatedDayPlan[mealIndex].mealItems.push(newItem);
+            } else {
+                console.warn(`Invalid meal index: ${mealIndex}`);
+            }
+
+            return updatedDayPlan;
+        });
+    };
+
     const saveMeal = () => {
         switch (appData.selectedMealType) {
             case "Breakfast":
-                appData.setPlan({ ...appData.plan, breakfast: meal });
+                addMealItem(0, meal);
+                console.log(appData.dayPlan);
                 break;
             case "Morning Snacks":
-                appData.setPlan({ ...appData.plan, morningSnacks: meal });
+                addMealItem(1, meal);
+                console.log(appData.dayPlan);
                 break;
-            case "lunch":
-                appData.setPlan({ ...appData.plan, lunch: meal });
+            case "Lunch":
+                addMealItem(2, meal);
+                console.log(appData.dayPlan);
                 break;
-            case "eveningSnacks":
-                appData.setPlan({ ...appData.plan, eveningSnacks: meal });
+            case "Evening Snacks":
+                addMealItem(3, meal);
+                console.log(appData.dayPlan);
                 break;
-            case "dinner":
-                appData.setPlan({ ...appData.plan, dinner: meal });
+            case "Dinner":
+                addMealItem(4, meal);
+                console.log(appData.dayPlan);
             default:
-                console.log("invalid meal type selected");
+                console.log("Invalid meal type selected");
         }
         setMeal({ mname: "", mcal: "" });
         appData.setSelectedMealType("none");

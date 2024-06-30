@@ -35,7 +35,7 @@ const Planner = () => {
             <h2>Create meal plan</h2>
 
             <div className={styles.mealsContainer}>
-                {dayPlan.map((meal, mealIndex) => (
+                {appData.dayPlan.map((meal, mealIndex) => (
                     <div key={mealIndex}>
                         <div className={styles.mealTypeHeader}>
                             <h3>{meal.mealType}</h3>
@@ -46,8 +46,8 @@ const Planner = () => {
                             <PlannerChild
                                 key={mealIndex}
                                 title={meal.mealType}
-                                name={item.name}
-                                calories={item.calories}
+                                name={item.mname}
+                                calories={item.mcal}
                                 mealType={meal.mealType}
                             />
                         ))}
